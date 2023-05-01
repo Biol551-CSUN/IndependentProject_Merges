@@ -26,15 +26,29 @@ knitr::opts_chunk$set(echo = TRUE,
 - Backreef (close to where the waves break)
 - Forereef (usually closest to the reef wall which is in in open water and slopes/drops off to larger depths)
 
-## Slide with R Output
+## Loading libraries 
 
-```{r cars, echo = TRUE}
-summary(cars)
+```{r, echo = TRUE}
+library(tidyverse)
+library(here)
+library(janitor)
+library(PNWColors)
 ```
 
-## Slide with Plot
+## Read in the data 
 
-```{r pressure}
-plot(pressure)
+```{r }
+recruits <- read_csv(here("Data","coral_recruit_tile_spat_counts_2006-2016_20180626.csv"))
+```
+
+## Tidy the data 
+In a way that is useful for the plots and output we are trying to create 
+Want to look at the change in recruit density over the years along the western shore particuarly the lagoon 
+
+```{r}
+## ideally looking to combine total counts of all tiles and season into one count per year by species 
+recruityears <- recruits %>% 
+  filter(habitat=="Lagoon") 
+  
 ```
 
