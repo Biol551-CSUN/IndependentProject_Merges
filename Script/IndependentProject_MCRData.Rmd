@@ -1,0 +1,40 @@
+---
+title: "Coral Recruitment Patterns in Different Reef Environments"
+author: "Hannah Merges"
+date: "`r Sys.Date()`"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE)
+```
+
+## What is a coral? 
+- Plant (photosynthetic algal symbiont)
+- Animal (coral host) 
+- Rock (calcium carbonate skeleton)
+
+## What is coral recruitment? 
+- The introduction of new individuals to a community 
+- Increases genetic diversity 
+- Aids in post-disturbance recovery 
+
+## Different types of reef environments 
+- Fringing reef (nearest the shore)
+- Backreef (close to where the waves break)
+- Forereef (usually closest to the reef wall which is in in open water and slopes/drops off to larger depths)
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
