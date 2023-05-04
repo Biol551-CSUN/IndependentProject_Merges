@@ -1,0 +1,10 @@
+﻿Variable ,Class ,Description 
+nominal_year,numeric ,year of recruit data 
+season,character ,6 month recruitment season 
+location ,character ,tile replicate  
+shore ,character ,different shores around Mo'orea 
+habitat ,character ,location of tiles in different reef environments 
+tile_id,numeric ,tile number at location 
+side ,character ,side of the tile that recruit is on 
+family ,character ,family of coral 
+count ,numeric ,count of recruits for each family/side 
