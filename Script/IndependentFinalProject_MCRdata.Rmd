@@ -14,6 +14,12 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.path = "../Outputs/")
 ```
 
+## About this dataset
+-  From the Moorea Coral Reef Long-Term Ecological Research project 
+-  Time-series data on coral recruitment from 2006-2016
+-  Collected from two different reef environments (lagoon and forereef)
+-  And from different shore lines (west, east, north, and south)
+
 ## What is a coral? 
 - Plant (photosynthetic algal symbiont)
 - Animal (coral host) 
@@ -46,8 +52,7 @@ recruits <- read_csv(here("Data","coral_recruit_tile_spat_counts_2006-2016_20180
 ## Tidy the data 
 - In a way that is useful for the plots and output we are trying to create  
 
-- Want to look at the change in recruit density over the years along the western 
-shore particularly the lagoon 
+- Want to look at the change in recruit species composition and abundance over the years between different habitats
 
 ```{r}
 ## ideally looking to combine total counts of all tiles and season into one count 
@@ -66,7 +71,7 @@ recruityears <- recruits %>%
   
 ```
 
-## Plot these data to show total number of recruits by family per year 
+## Total number of recruits by family per year 
 
 ```{r, recruit_total}
 ggplot(data=recruityears, 
@@ -77,10 +82,12 @@ ggplot(data=recruityears,
   labs(x="Year", 
        y="Total Number of Recruits", 
        title="Total Number of Recruits by Family from 2006-2016", 
-       fill="Coral Family") + 
+       fill="Coral Family", 
+       subtitle = str_wrap("Shows a shift from Acropora to Pocillopora after 2007, which correlates with bleaching events from 2007. In 2011, lots of recruitment, which may be due to recovery post-cyclone.")) + 
   facet_wrap(~habitat) + 
   theme_linedraw() + 
   theme(plot.title=element_text(hjust=0.5),
+        plot.subtitle = element_text(hjust=0.5), 
         axis.text.x=element_text(size=10, angle = 45, vjust=0.5), ##to get the x 
         #axis slightly angled so text is not on top of each other. vjust moves 
         #text away from the actual axis 
@@ -145,3 +152,6 @@ ggsave(here("Outputs","tilelocation.jpg"),
 ```
 
 ## Conclusion 
+-  Corals prefer to settle on the bottom of the recruitment tiles 
+-  A shift in _Acropora_ to _Pocillopora_ occured in both the lagoon and the forereef 
+-  Recruitment rates never really returned to levels pre-disturbance, though did have some bounce back after the cyclone. 
