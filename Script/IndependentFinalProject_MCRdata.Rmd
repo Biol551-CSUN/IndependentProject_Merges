@@ -85,7 +85,7 @@ ggplot(data=recruityears,
        y="Total Number of Recruits", 
        title="Total Number of Recruits by Family from 2006-2016", 
        fill="Coral Family", 
-       subtitle = str_wrap("Shows a shift from Acropora to Pocillopora after 2007, which correlates with bleaching events from 2007. In 2011, lots of recruitment, which may be due to recovery post-cyclone.")) + 
+       subtitle = str_wrap("Shows a shift from Acropora to Pocillopora after 2007, which correlates with bleaching events from 2007. In 2011, lots of recruitment, which may be due to recovery post-cyclone.")) + ##this wraps the text  
   facet_wrap(~habitat) + 
   theme_linedraw() + 
   theme(plot.title=element_text(hjust=0.5),
