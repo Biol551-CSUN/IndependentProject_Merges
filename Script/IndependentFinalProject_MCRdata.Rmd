@@ -130,8 +130,8 @@ recruit_table <- recruityears %>%
 recruit_table %>% 
   kbl(caption = "Summarize recruitment data from 3 coral families between 2006 
       and 2016") %>% 
-  kable_minimal("hover", html_font = "Calibri", c("striped")) %>% 
-  scroll_box(width = "100%", height = "100px") 
+  kable_minimal("hover", html_font = "Calibri", c("striped")) %>% ## this makes it so you can hover over and highlight each row 
+  scroll_box(width = "100%", height = "100px") ## this makes it so you can scroll through the table 
 
 ```
 
